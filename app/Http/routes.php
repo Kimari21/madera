@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('faq', function() { return view('faq'); });
+Route::get('2', function() { return 'Je suis la page 2 !'; });
+Route::get('3', function() { return 'Je suis la page 3 !'; });
