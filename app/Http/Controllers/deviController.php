@@ -8,22 +8,42 @@ use App\Http\Requests;
 
 class deviController extends Controller
 {
-    public function list()
+    public function getlist()
 	{
 		return view('list_devi');
 	}
 
-	public function add()
+	public function getadd()
 	{
-		return view('add_devi');
+		return view('devi/formulaire_devi');
 	}
 
-	public function edit($n)
+	public function getedit($n)
 	{
 		return view('edit_devi')->with('numero', $n);
 	}
 
-	public function supp($n)
+	public function getsupp($n)
+	{
+		return view('supp_devi')->with('numero', $n);
+	}
+
+	    public function postlist()
+	{
+		return view('list_devi');
+	}
+
+	public function postadd()
+	{
+		return view('formulaire_devi');
+	}
+
+	public function postedit($n)
+	{
+		return view('edit_devi')->with('numero', $n);
+	}
+
+	public function postsupp($n)
 	{
 		return view('supp_devi')->with('numero', $n);
 	}
