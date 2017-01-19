@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('/home', function () {
+    return view('welcome');
+});
+
 Route::get('faq', function() { return view('faq'); });
 
 
