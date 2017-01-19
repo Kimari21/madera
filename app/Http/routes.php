@@ -17,5 +17,97 @@ Route::get('/', function () {
 
 
 Route::get('faq', function() { return view('faq'); });
-Route::get('2', function() { return 'Je suis la page 2 !'; });
-Route::get('3', function() { return 'Je suis la page 3 !'; });
+
+
+Route::get('/list_caract_gamme', ['uses' => 'caracteristiques_gammeController@list', 'as' => 'list_caract_gamme']);
+Route::get('/add_caract_gamme', ['uses' => 'caracteristiques_gammeController@add', 'as' => 'add_caract_gamme']);
+Route::get('/edit_caract_gamme', ['uses' => 'caracteristiques_gammeController@edit', 'as' => 'edit_caract_gamme']);
+Route::get('/supp_caract_gamme', ['uses' => 'caracteristiques_gammeController@supp', 'as' => 'supp_caract_gamme']);
+
+Route::get('/list_client', ['uses' => 'clientController@list', 'as' => 'list_client']);
+Route::get('/add_client', ['uses' => 'clientController@add', 'as' => 'add_client']);
+Route::get('/edit_client', ['uses' => 'clientController@edit', 'as' => 'edit_client']);
+Route::get('/supp_client', ['uses' => 'clientController@supp', 'as' => 'supp_client']);
+
+Route::get('/list_composant', ['uses' => 'composantController@list', 'as' => 'list_composant']);
+Route::get('/edit_composant', ['uses' => 'composantController@edit', 'as' => 'edit_composant']);
+Route::get('/add_composant', ['uses' => 'composantController@add', 'as' => 'add_composant']);
+Route::get('/supp_composant', ['uses' => 'composantController@supp', 'as' => 'supp_composant']);
+
+Route::get('/list_compose', ['uses' => 'composeController@list', 'as' => 'list_compose']);
+Route::get('/add_compose', ['uses' => 'composeController@add', 'as' => 'add_compose']);
+Route::get('/edit_compose', ['uses' => 'composeController@edit', 'as' => 'edit_compose']);
+Route::get('/supp_compose', ['uses' => 'composeController@supp', 'as' => 'supp_compose']);
+
+
+Route::get('/list_connexion', ['uses' => 'connexionController@list', 'as' => 'list_connexion']);
+Route::get('/add_connexion', ['uses' => 'connexionController@add', 'as' => 'add_connexion']);
+Route::get('/edit_connexion', ['uses' => 'connexionController@edit', 'as' => 'edit_connexion']);
+Route::get('/supp_connexion', ['uses' => 'connexionController@supp', 'as' => 'supp_connexion']);
+
+Route::get('/list_devi', ['uses' => 'deviController@list', 'as' => 'list_devi']);
+Route::get('/add_devi', ['uses' => 'deviController@add', 'as' => 'add_devi']);
+Route::get('/edit_devi', ['uses' => 'deviController@edit', 'as' => 'edit_devi']);
+Route::get('/supp_devi', ['uses' => 'deviController@supp', 'as' => 'supp_devi']);
+
+Route::get('/list_etat', ['uses' => 'etatController@list', 'as' => 'list_etat']);
+Route::get('/edit_etat', ['uses' => 'etatController@edit', 'as' => 'edit_etat']);
+Route::get('/add_etat', ['uses' => 'etatController@add', 'as' => 'add_etat']);
+Route::get('/supp_etat', ['uses' => 'etatController@supp', 'as' => 'supp_etat']);
+
+Route::get('/list_famillecomposant', ['uses' => 'famillecomposantController@list', 'as' => 'list_famillecomposant']);
+Route::get('/add_famillecomposant', ['uses' => 'famillecomposantController@add', 'as' => 'add_famillecomposant']);
+Route::get('/edit_famillecomposant', ['uses' => 'famillecomposantController@edit', 'as' => 'edit_famillecomposant']);
+Route::get('/supp_famillecomposant', ['uses' => 'famillecomposantController@supp', 'as' => 'supp_famillecomposant']);
+
+Route::get('/list_fournisseur', ['uses' => 'fournisseurController@list', 'as' => 'list_fournisseur']);
+Route::get('/add_fournisseur', ['uses' => 'fournisseurController@add', 'as' => 'add_fournisseur']);
+Route::get('/edit_fournisseur', ['uses' => 'fournisseurController@edit', 'as' => 'edit_fournisseur']);
+Route::get('/supp_fournisseur', ['uses' => 'fournisseurController@supp', 'as' => 'supp_fournisseur']);
+
+Route::get('/list_gamme', ['uses' => 'gammeController@list', 'as' => 'list_gamme']);
+Route::get('/add_gamme', ['uses' => 'gammeController@add', 'as' => 'add_gamme']);
+Route::get('/edit_gamme', ['uses' => 'gammeController@edit', 'as' => 'edit_gamme']);
+Route::get('/supp_gamme', ['uses' => 'gammeController@supp', 'as' => 'supp_gamme']);
+
+Route::get('/list_module', ['uses' => 'moduleController@list', 'as' => 'list_module']);
+Route::get('/edit_module', ['uses' => 'moduleController@edit', 'as' => 'edit_module']);
+Route::get('/add_module', ['uses' => 'moduleController@add', 'as' => 'add_module']);
+Route::get('/supp_module', ['uses' => 'moduleController@supp', 'as' => 'supp_module']);
+
+Route::get('/list_photosgamme', ['uses' => 'photosgammeController@list', 'as' => 'list_photosgamme']);
+Route::get('/add_photosgamme', ['uses' => 'photosgammeController@add', 'as' => 'add_photosgamme']);
+Route::get('/edit_photosgamme', ['uses' => 'photosgammeController@edit', 'as' => 'edit_photosgamme']);
+Route::get('/supp_photosgamme', ['uses' => 'photosgammeController@supp', 'as' => 'supp_photosgamme']);
+
+
+
+Route::get('/list_photosmodule', ['uses' => 'photosmoduleController@list', 'as' => 'list_photosmodule']);
+Route::get('/edit_photosmodule', ['uses' => 'photosmoduleController@edit', 'as' => 'edit_photosmodule']);
+Route::get('/add_photosmodule', ['uses' => 'photosmoduleController@add', 'as' => 'add_photosmodule']);
+Route::get('/supp_photosmodule', ['uses' => 'photosmoduleController@supp', 'as' => 'supp_photosmodule']);
+
+Route::get('/list_possede', ['uses' => 'possedeController@list', 'as' => 'list_possede']);
+Route::get('/add_possede', ['uses' => 'possedeController@add', 'as' => 'add_possede']);
+Route::get('/edit_possede', ['uses' => 'possedeController@edit', 'as' => 'edit_possede']);
+Route::get('/supp_possede', ['uses' => 'possedeController@supp', 'as' => 'supp_possede']);
+
+Route::get('/list_role', ['uses' => 'roleController@list', 'as' => 'list_role']);
+Route::get('/add_role', ['uses' => 'roleController@add', 'as' => 'add_role']);
+Route::get('/edit_role', ['uses' => 'roleController@edit', 'as' => 'edit_role']);
+Route::get('/supp_role', ['uses' => 'roleController@supp', 'as' => 'supp_role']);
+
+Route::get('/list_sousfamillecomposant', ['uses' => 'sousfamillecomposantController@list', 'as' => 'list_sousfamillecomposant']);
+Route::get('/add_sousfamillecomposant', ['uses' => 'sousfamillecomposantController@add', 'as' => 'add_sousfamillecomposant']);
+Route::get('/edit_sousfamillecomposant', ['uses' => 'sousfamillecomposantController@edit', 'as' => 'edit_sousfamillecomposant']);
+Route::get('/supp_sousfamillecomposant', ['uses' => 'sousfamillecomposantController@supp', 'as' => 'supp_sousfamillecomposant']);
+
+Route::get('/list_statut', ['uses' => 'statutController@list', 'as' => 'list_statut']);
+Route::get('/edit_statut', ['uses' => 'statutController@edit', 'as' => 'edit_statut']);
+Route::get('/add_statut', ['uses' => 'statutController@add', 'as' => 'add_statut']);
+Route::get('/supp_statut', ['uses' => 'statutController@supp', 'as' => 'supp_statut']);
+
+Route::get('/list_utilisateur', ['uses' => 'utilisateurController@list', 'as' => 'list_utilisateur']);
+Route::get('/add_utilisateur', ['uses' => 'utilisateurController@add', 'as' => 'add_utilisateur']);
+Route::get('/edit_utilisateur', ['uses' => 'utilisateurController@edit', 'as' => 'edit_utilisateur']);
+Route::get('/supp_utilisateur', ['uses' => 'utilisateurController@supp', 'as' => 'supp_utilisateurs']);
