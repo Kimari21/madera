@@ -3,28 +3,75 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
+use App\Quotation;
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+use App\Models;
 
 class gammeController extends Controller
 {
-      public function list()
+public function getlist()
+	{
+		 $gamme = DB::table('gamme')->get();
+
+        return view('gamme/list_gamme', ['gamme' => $gamme]);
+	}
+
+	public function getadd()
+	{	
+		 
+		  $caract_gamme = DB::table('caracteristiques_gamme')->whereNotIn('Id_CaracteristiquesGamme',DB::table('caracteristiques_gamme')->select('gamme.Id_CaracteristiquesGamme')->join('gamme', 'caracteristiques_gamme.Id_CaracteristiquesGamme', '=', 'gamme.Id_CaracteristiquesGamme'))->get();
+		
+		return view('gamme/add_gamme', ['caract_gamme' => $caract_gamme]);
+	}
+
+	public function getedit()
+	{
+		return view('edit_gamme');
+	}
+
+	public function getsupp()
+	{
+		return view('supp_gamme');
+	}
+
+	    public function postlist($formulaire)
 	{
 		return view('list_gamme');
 	}
 
-	public function add()
+	public function postadd(Request $formulaire)
 	{
-		return view('add_gamme');
+		utf8_encode($formulaire);
+		return  DB::table('gamme')->insert([
+			'Id_Gamme' => 0,
+            'Id_CaracteristiquesGamme' => $formulaire['caract_gamme'],
+            'Prix_Gamme' => $formulaire['prix_gamme'],
+            'Nom_Gamme' =>$formulaire['nom_gamme'],
+            
+            'Proprietaire_Gamme' =>$formulaire['prop_gamme'],
+      
+        ]);
+
+         $gamme = DB::table('gamme')->get();
+
+        return view('gamme/list_gamme', ['gamme' => $gamme]);
 	}
 
-	public function edit($n)
+	public function postedit($n)
 	{
 		return view('edit_gamme')->with('numero', $n);
 	}
 
-	public function supp($n)
+	public function postsupp(Request $formulaire)
 	{
-		return view('supp_gamme')->with('numero', $n);
+
+		DB::table('gamme')->where('Id_Gamme', '=', $formulaire['supprimer'])->delete();
+		 $gamme = DB::table('gamme')->get();
+
+       return redirect('list_gamme'); 
 	}
+
 }
