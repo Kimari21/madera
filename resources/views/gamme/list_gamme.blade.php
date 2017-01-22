@@ -35,7 +35,16 @@
              @endforeach
             </table>
         </div>
+        {!! Form::open(['url' => 'add_gamme', 'method' =>'GET'], ['class' => 'form-horizontal well']) !!}
+
+        {!! Form::submit('Ajouter une gamme', array('class'=> 'btn')) !!}
+
+    {!! Form::close() !!}
 </div>
+
+
+
+
 @endsection
 
 

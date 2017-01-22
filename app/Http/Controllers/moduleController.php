@@ -67,7 +67,7 @@ class moduleController extends Controller
 
 	public function postsupp(Request $formulaire)
 	{
-		DB::table('module')->where('Id_Gamme', '=', $formulaire['supprimer'])->delete();
+		DB::table('module')->where('Id_Module', '=', $formulaire['supprimer'])->delete();
 		 $module = DB::table('module')->get();
 
        return redirect('list_module'); 

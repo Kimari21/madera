@@ -1,11 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
 use App\Quotation;
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
+use App\Models;
+	
 
 class deviController extends Controller
 {
@@ -18,8 +21,11 @@ class deviController extends Controller
 
 	public function getadd()
 	{
-		return view('devi/formulaire_devi');
-	}
+		
+				 $client = DB::table('clients')->get();
+
+        return view('devi/add_devi', ['client' => $client]);
+    }
 
 	public function getedit()
 	{
@@ -38,10 +44,10 @@ class deviController extends Controller
 
 	public function postadd($formulaire)
 	{
-		return Devi::create([
-            'Id_Utilisateurs' => $session['id'],
+		return  DB::table('devis')->insert([
+            'Id_Utilisateurs' => 1,
             'Id_Clients' => $formulaire['id_client'],
-            'Id_Etat' =>$formulaire['id_etat'],
+            'Id_Etat' => 1,
             'Id_Statut' => 0,
             'PrixTotal_Devis' => $formulaire['px_total'],
             'RemiseCommerciale_Devis' =>$formulaire['remise_commercial'],

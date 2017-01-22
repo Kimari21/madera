@@ -35,7 +35,15 @@
              @endforeach
             </table>
         </div>
+        {!! Form::open(['url' => 'add_devi', 'method' =>'GET'], ['class' => 'form-horizontal well']) !!}
+
+        {!! Form::submit('Ajouter un devi', array('class'=> 'btn')) !!}
+
+    {!! Form::close() !!}
 </div>
+
+
+
 @endsection
 
 

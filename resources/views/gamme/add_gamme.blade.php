@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-    Devi
+    Gamme
 @endsection
 
 @section('contenu')
