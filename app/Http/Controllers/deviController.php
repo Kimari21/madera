@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use App\Models;
+use Carbon\Carbon;
 	
 
 class deviController extends Controller
@@ -42,7 +43,7 @@ class deviController extends Controller
 		return view('list_devi');
 	}
 
-	public function postadd($formulaire)
+	public function postadd(Request $formulaire)
 	{
 		return  DB::table('devis')->insert([
             'Id_Utilisateurs' => 1,
@@ -51,7 +52,7 @@ class deviController extends Controller
             'Id_Statut' => 0,
             'PrixTotal_Devis' => $formulaire['px_total'],
             'RemiseCommerciale_Devis' =>$formulaire['remise_commercial'],
-            'DateCreation_Devis' => Carbon\Carbon::now(),
+            'DateCreation_Devis' => Carbon::now(),
         ]);
 
         		 $devi = DB::table('devis')->get();
