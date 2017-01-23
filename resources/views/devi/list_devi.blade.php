@@ -14,7 +14,7 @@
              <tr><th style="width:200px; height:50px;"> {{$undevi->Id_Utilisateurs}}</th><th style="width:200px; height:50px;"> {{$undevi->Id_Clients}}</th><th style="width:200px; height:50px;"> {{$undevi->Id_Etat}}</th><th  style="width:200px; height:50px;">    {{$undevi->PrixTotal_Devis}}   </th>
              <th>
 
-{!! Form::open(['url' => 'deviController@postedit'], ['class' => 'form-horizontal well']) !!}
+{!! Form::open(['url' => 'edit_devi'], ['class' => 'form-horizontal well']) !!}
 
 		{!! Form::hidden('invisible', '$undevi->Id_Devis') !!}
         {!! Form::submit('Modifier', array('class'=> 'btn btn-Danger')) !!}
@@ -23,7 +23,7 @@
 
     <br>
 
-{!! Form::open(['url' => 'deviController@postsupp'], ['class' => 'form-horizontal well']) !!}
+{!! Form::open(['url' => 'supp_devi'], ['class' => 'form-horizontal well']) !!}
 
 {!! Form::hidden('invisible', '$undevi->Id_Devis') !!}
         {!! Form::submit('Supprimer', array('class'=> 'btn btn-Danger')) !!}

@@ -37,12 +37,11 @@
              @endforeach
             </table>
         </div>
-{!! Form::open(['url' => 'add_module, 'method' =>'GET''], ['class' => 'form-horizontal well']) !!}
+{!! Form::open(['url' => 'add_module', 'method' =>'GET'], ['class' => 'form-horizontal well']) !!}
 
         {!! Form::submit('Ajouter un module', array('class'=> 'btn')) !!}
 
     {!! Form::close() !!}
-</div>
 
 @endsection
 

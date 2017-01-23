@@ -24,7 +24,7 @@ class deviController extends Controller
 	{
 		
 				 $client = DB::table('clients')->get();
-
+$client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->select('clients.Id_Clients')->join('devis', 'clients.Id_Clients', '=', 'devis.Id_Clients'))->get();
         return view('devi/add_devi', ['client' => $client]);
     }
 
@@ -49,7 +49,7 @@ class deviController extends Controller
             'Id_Utilisateurs' => 1,
             'Id_Clients' => $formulaire['id_client'],
             'Id_Etat' => 1,
-            'Id_Statut' => 0,
+            'Id_Statut' => 2,
             'PrixTotal_Devis' => $formulaire['px_total'],
             'RemiseCommerciale_Devis' =>$formulaire['remise_commercial'],
             'DateCreation_Devis' => Carbon::now(),
@@ -61,13 +61,19 @@ class deviController extends Controller
 
 	}
 
-	public function postedit($n)
-	{
-		return view('edit_devi')->with('numero', $n);
-	}
+		public function postedit(Request $formulaire)
+		{ 
+			$devi =  DB::table('devis')->where('Id_Devis', '=', $formulaire['modifier'])->get();
+   		  $client = DB::table('clients')->get();
+$client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->select('clients.Id_Clients')->join('devis', 'clients.Id_Clients', '=', 'devis.Id_Clients'))->get();
+  		return view('devi/edit_devi', ['devi' => $devi], ['client' => $client] );
+		}
 
-	public function postsupp($n)
+	public function postsupp(Request $formulaire)
 	{
-		return view('supp_devi')->with('numero', $n);
+				DB::table('devis')->where('Id_Devis', '=', $formulaire['supprimer'])->delete();
+		 $devi = DB::table('devis')->get();
+
+       return redirect('list_devi'); 
 	}
 }

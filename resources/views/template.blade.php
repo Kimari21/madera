@@ -31,8 +31,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/madera/public/list_devi">Devis <span class="sr-only">(current)</span></a></li>
-        <li><a href="/madera/public/client">Clients</a></li>
-        <li><a href="/madera/public/database">Database </a></li>
+        <li><a href="/madera/public/list_client">Clients</a></li>
+        <li><a href="/madera/public/list_module">Module </a></li>
+               <li><a href="/madera/public/list_gamme">Gamme </a></li>
         <li><a href="/madera/public/faq">FAQ </a></li>
         
       </ul>
