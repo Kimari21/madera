@@ -68,6 +68,30 @@ public function getlist()
   		return view('gamme/edit_gamme', ['caract_gamme' => $caract_gamme], ['gamme' => $gamme] );
 	}
 
+
+	public function postvalidedit(Request $formulaire)
+	{
+		if ($formulaire['caract_gamme'] != null) {
+			Gamme::where('Id_Gamme', $formulaire['Id_Gamme'])
+		->update(['Id_CaracteristiquesGamme' => $formulaire['caract_gamme']], ['Prix_Gamme' => $formulaire['prix_gamme']],
+			['Nom_Gamme' => $formulaire['nom_gamme']], ['Proprietaire_Gamme' =>$formulaire['prop_gamme']]);
+		 
+
+		}
+		else
+		{
+
+			Gamme::where('Id_Gamme', $formulaire['Id_Gamme'])
+		->update(['Prix_Gamme' => $formulaire['prix_gamme']], ['Nom_Gamme' => $formulaire['nom_gamme']], 
+			['Proprietaire_Gamme' =>$formulaire['prop_gamme']]);
+		 
+		}
+		
+		 $gamme = DB::table('gamme')->get();
+
+       return redirect('list_gamme'); 
+	}
+
 	public function postsupp(Request $formulaire)
 	{
 

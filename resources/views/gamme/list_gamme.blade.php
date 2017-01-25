@@ -11,7 +11,7 @@
               <th>caract</th>  <th>nom</th>      <th>prix</th>  <th>propriétaire</th>  
                @foreach ($gamme as $unegamme)
              
-             <tr><th style="width:200px; height:50px;"> {{$unegamme->Id_CaracteristiquesGamme}}</th><th style="width:200px; height:50px;"> {{$unegamme->Nom_Gamme}}</th><th style="width:200px; height:50px;"> {{$unegamme->Prix_Gamme}}</th><th  style="width:200px; height:50px;">    {{$unegamme->Prix_Gamme}}   </th>
+             <tr><th style="width:200px; height:50px;"> {{$unegamme->Id_CaracteristiquesGamme}}</th><th style="width:200px; height:50px;"> {{$unegamme->Nom_Gamme}}</th><th style="width:200px; height:50px;"> {{$unegamme->Prix_Gamme}}</th><th  style="width:200px; height:50px;">    {{$unegamme->Proprietaire_Gamme}}   </th>
              <th>
 
 {!! Form::open(['url' => 'edit_gamme'], ['class' => 'form-horizontal well']) !!}

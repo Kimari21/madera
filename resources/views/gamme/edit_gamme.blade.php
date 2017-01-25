@@ -8,6 +8,8 @@
 <div class='col-md-4 col-md-offset-4'>
 
 {!! Form::open(['url' => 'valid_edit_gamme']) !!}
+
+{!! Form::hidden('Id_Gamme', $gamme->Id_Gamme) !!}
  <div class="form-group">
     {!! Form::label('nom_gamme', 'Entrez le nom de la gamme : ') !!}
 
