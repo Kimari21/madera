@@ -130,6 +130,7 @@ Route::post('/list_client', ['uses' => 'clientController@postlist', 'as' => 'lis
 Route::post('/add_client', ['uses' => 'clientController@postadd', 'as' => 'add_client']);
 Route::post('/edit_client', ['uses' => 'clientController@postedit', 'as' => 'edit_client']);
 Route::post('/supp_client', ['uses' => 'clientController@postsupp', 'as' => 'supp_client']);
+Route::post('/valid_edit_client', ['uses' => 'clientController@postvalidedit', 'as' => 'valid_edit_client']);
 
 Route::post('/list_composant', ['uses' => 'composantController@postlist', 'as' => 'list_composant']);
 Route::post('/edit_composant', ['uses' => 'composantController@postedit', 'as' => 'edit_composant']);
@@ -151,6 +152,7 @@ Route::post('/list_devi', ['uses' => 'deviController@postlist', 'as' => 'list_de
 Route::post('/add_devi', ['uses' => 'deviController@postadd', 'as' => 'add_devi']);
 Route::post('/edit_devi', ['uses' => 'deviController@postedit', 'as' => 'edit_devi']);
 Route::post('/supp_devi', ['uses' => 'deviController@postsupp', 'as' => 'supp_devi']);
+Route::post('/valid_edit_devi', ['uses' => 'deviController@postvalidedit', 'as' => 'valid_edit_devi']);
 
 Route::post('/list_etat', ['uses' => 'etatController@postlist', 'as' => 'list_etat']);
 Route::post('/edit_etat', ['uses' => 'etatController@postedit', 'as' => 'edit_etat']);
@@ -171,11 +173,15 @@ Route::post('/list_gamme', ['uses' => 'gammeController@postlist', 'as' => 'list_
 Route::post('/add_gamme', ['uses' => 'gammeController@postadd', 'as' => 'add_gamme']);
 Route::post('/edit_gamme', ['uses' => 'gammeController@postedit', 'as' => 'edit_gamme']);
 Route::post('/supp_gamme', ['uses' => 'gammeController@postsupp', 'as' => 'supp_gamme']);
+Route::post('/valid_edit_gamme', ['uses' => 'gammeController@postvalidedit', 'as' => 'valid_edit_gamme']);
+
 
 Route::post('/list_module', ['uses' => 'moduleController@postlist', 'as' => 'list_module']);
 Route::post('/edit_module', ['uses' => 'moduleController@postedit', 'as' => 'edit_module']);
 Route::post('/add_module', ['uses' => 'moduleController@postadd', 'as' => 'add_module']);
 Route::post('/supp_module', ['uses' => 'moduleController@postsupp', 'as' => 'supp_module']);
+Route::post('/valid_edit_module', ['uses' => 'moduleController@postvalidedit', 'as' => 'valid_edit_module']);
+
 
 Route::post('/list_photosgamme', ['uses' => 'photosgammeController@postlist', 'as' => 'list_photosgamme']);
 Route::post('/add_photosgamme', ['uses' => 'photosgammeController@postadd', 'as' => 'add_photosgamme']);
@@ -213,4 +219,4 @@ Route::post('/list_utilisateur', ['uses' => 'utilisateurController@postlist', 'a
 Route::post('/add_utilisateur', ['uses' => 'utilisateurController@postadd', 'as' => 'add_utilisateur']);
 Route::post('/edit_utilisateur', ['uses' => 'utilisateurController@postedit', 'as' => 'edit_utilisateur']);
 Route::post('/supp_utilisateur', ['uses' => 'utilisateurController@postsupp', 'as' => 'supp_utilisateurs']);
-
+Route::post('/valid_edit_utilisateurs', ['uses' => 'utilisateursController@postvalidedit', 'as' => 'valid_edit_utilisateurs']);

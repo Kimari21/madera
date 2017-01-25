@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Composant
@@ -35,7 +35,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Composant extends Eloquent
+class Composant extends Model
 {
 	protected $primaryKey = 'Id_Composants';
 	public $timestamps = false;

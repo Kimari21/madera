@@ -7,7 +7,7 @@ use App\Quotation;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
-
+use App\Models\Devi;
 use Carbon\Carbon;
 
 

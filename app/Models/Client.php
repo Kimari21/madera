@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Client
@@ -26,7 +26,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Client extends Eloquent
+class Client extends Model
 {
 	protected $primaryKey = 'Id_Clients';
 	public $timestamps = false;

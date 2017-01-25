@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Utilisateur
@@ -29,7 +29,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Utilisateur extends Eloquent
+class Utilisateur extends Model
 {
 	protected $primaryKey = 'Id_Utilisateurs';
 	public $timestamps = false;

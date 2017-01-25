@@ -7,8 +7,8 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
 
+use Illuminate\Database\Eloquent\Model;
 /**
  * Class Devi
  * 
@@ -30,7 +30,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Devi extends Eloquent
+class Devi extends Model
 {
 	use FormAccessible;
 	protected $primaryKey = 'Id_Devis';

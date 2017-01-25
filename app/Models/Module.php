@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Module
@@ -34,7 +34,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Module extends Eloquent
+class Module extends Model
 {
 	protected $table = 'module';
 	protected $primaryKey = 'Id_Module';

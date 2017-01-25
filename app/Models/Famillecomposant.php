@@ -7,8 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
-
+use Illuminate\Database\Eloquent\Model;
 /**
  * Class Famillecomposant
  * 
@@ -19,7 +18,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Famillecomposant extends Eloquent
+class Famillecomposant extends Model
 {
 	protected $primaryKey = 'Id_FamilleComposants';
 	public $timestamps = false;

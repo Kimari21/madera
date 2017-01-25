@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Quotation;
 use App\Http\Requests;
+use App\Models\Module;
 
 class moduleController extends Controller
 {

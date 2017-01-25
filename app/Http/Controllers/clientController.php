@@ -8,7 +8,7 @@ use App\Quotation;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
-use App\Models;
+use App\Models\Client;
 use Carbon\Carbon;
 
 class clientController extends Controller
@@ -29,8 +29,8 @@ class clientController extends Controller
 
 public function postadd(Request $formulaire)
 	{
-		
-		  DB::table('clients')->insert([
+	
+			  DB::table('clients')->insert([
 			'Id_Clients' => 0,
             'Nom_Clients' => $formulaire['nom_client'],
             'Prenom_Clients' => $formulaire['prenom_client'],

@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Photosmodule
@@ -23,7 +23,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Photosmodule extends Eloquent
+class Photosmodule extends Model
 {
 	protected $primaryKey = 'Id_PhotosModule';
 	public $timestamps = false;

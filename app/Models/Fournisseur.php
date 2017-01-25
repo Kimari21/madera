@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Fournisseur
@@ -26,7 +26,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Fournisseur extends Eloquent
+class Fournisseur extends Model
 {
 	protected $primaryKey = 'Id_Fournisseurs';
 	public $timestamps = false;

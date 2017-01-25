@@ -8,7 +8,7 @@ use App\Quotation;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
-use App\Models;
+use App\Models\Gamme;
 
 class gammeController extends Controller
 {
@@ -60,9 +60,12 @@ public function getlist()
         return view('gamme/list_gamme', ['gamme' => $gamme]);
 	}
 
-	public function postedit($n)
+	public function postedit(Request $formulaire)
 	{
-		return view('edit_gamme')->with('numero', $n);
+		$gamme =  Gamme::findOrFail($formulaire['modifier']);
+   		 
+		  $caract_gamme = DB::table('caracteristiques_gamme')->whereNotIn('Id_CaracteristiquesGamme',DB::table('caracteristiques_gamme')->select('gamme.Id_CaracteristiquesGamme')->join('gamme', 'caracteristiques_gamme.Id_CaracteristiquesGamme', '=', 'gamme.Id_CaracteristiquesGamme'))->get();
+  		return view('gamme/edit_gamme', ['caract_gamme' => $caract_gamme], ['gamme' => $gamme] );
 	}
 
 	public function postsupp(Request $formulaire)

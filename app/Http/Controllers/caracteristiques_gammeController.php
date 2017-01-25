@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\CaracteristiquesGamme;
 use App\Http\Requests;
 
 class caracteristiques_gammeController extends Controller

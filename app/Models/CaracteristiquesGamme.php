@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class CaracteristiquesGamme
@@ -24,7 +24,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class CaracteristiquesGamme extends Eloquent
+class CaracteristiquesGamme extends Model
 {
 	protected $table = 'caracteristiques_gamme';
 	protected $primaryKey = 'Id_CaracteristiquesGamme';

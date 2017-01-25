@@ -7,7 +7,7 @@
 
 namespace App\Models;
 
-use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Connexion
@@ -20,7 +20,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class Connexion extends Eloquent
+class Connexion extends Model
 {
 	protected $table = 'connexion';
 	protected $primaryKey = 'Id_Connexion';
