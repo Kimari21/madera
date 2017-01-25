@@ -61,9 +61,11 @@ class moduleController extends Controller
         return view('module/list_module', ['module' => $module]);
 	}
 
-	public function postedit($n)
+	public function postedit(Request $formulaire)
 	{
-		return view('edit_module')->with('numero', $n);
+		$module =  Module::findOrFail($formulaire['modifier']);
+		  $gamme = DB::table('gamme')->get();
+		return view('module/edit_module', ['module' => $module], ['gamme' => $gamme] );
 	}
 
 	public function postsupp(Request $formulaire)

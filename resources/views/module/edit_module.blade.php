@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-    Gamme
+   Editer Module
 @endsection
 
 @section('contenu')
@@ -68,11 +68,7 @@
 
         {!! Form::number('AngleSortant_Module', $module->AngleSortant_Module) !!}
 </div>
-   <div class="form-group">
-        {!! Form::label('number', 'Entrez un prix : ') !!}
 
-        {!! Form::number('prix_module', $module->Prix_module) !!}
-        </div>
    
  <div class="form-group">
         {!! Form::label('Epaisseur_Module', 'Epaisseur module : ') !!}

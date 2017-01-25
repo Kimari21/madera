@@ -70,11 +70,7 @@
 
         {!! Form::number('AngleSortant_Module') !!}
 </div>
-   <div class="form-group">
-        {!! Form::label('number', 'Entrez un prix : ') !!}
 
-        {!! Form::number('prix_module') !!}
-        </div>
    
  <div class="form-group">
         {!! Form::label('Epaisseur_Module', 'Epaisseur module : ') !!}
