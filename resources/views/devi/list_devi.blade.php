@@ -16,7 +16,7 @@
 
 {!! Form::open(['url' => 'edit_devi'], ['class' => 'form-horizontal well']) !!}
 
-		{!! Form::hidden('modifier', '$undevi->Id_Devis') !!}
+		{!! Form::hidden('modifier', $undevi->Id_Devis) !!}
         {!! Form::submit('Modifier', array('class'=> 'btn btn-Danger')) !!}
 
     {!! Form::close() !!}
@@ -25,7 +25,7 @@
 
 {!! Form::open(['url' => 'supp_devi'], ['class' => 'form-horizontal well']) !!}
 
-{!! Form::hidden('supprimer', '$undevi->Id_Devis') !!}
+{!! Form::hidden('supprimer', $undevi->Id_Devis) !!}
         {!! Form::submit('Supprimer', array('class'=> 'btn btn-Danger')) !!}
 
     {!! Form::close() !!}

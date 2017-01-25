@@ -23,7 +23,7 @@
  <div class="form-group">
         <label for="remise_commercial">Remise commercial : </label>    
 
-        <input name="remise_commercial" type="number" id="remise_commercial" value="{{$undevi->RemiseCommercial_Devis}}">    
+        <input name="remise_commercial" type="number" id="remise_commercial" value="{{$undevi->RemiseCommerciale_Devis}}">    
 </div>
 
  
