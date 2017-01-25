@@ -29,8 +29,8 @@ class clientController extends Controller
 
 public function postadd(Request $formulaire)
 	{
-		utf8_encode($formulaire);
-		return  DB::table('clients')->insert([
+		
+		  DB::table('clients')->insert([
 			'Id_Clients' => 0,
             'Nom_Clients' => $formulaire['nom_client'],
             'Prenom_Clients' => $formulaire['prenom_client'],

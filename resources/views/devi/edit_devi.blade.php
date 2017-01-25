@@ -6,7 +6,7 @@
 
 @section('contenu')
 
-  
+  @foreach ($devi as $undevi)
  <div class='col-md-4 col-md-offset-4'>
 
  
@@ -17,16 +17,16 @@
  <div class="form-group">
         <label for="px_total">Entrez un prix : </label>    
 
-        <input name="px_total" type="number" id="px_total" value="{{$devi->PrixTotal_Devis}}">    
+        <input name="px_total" type="number" id="px_total" value="{{$undevi->PrixTotal_Devis}}">    
 </div>
 
  <div class="form-group">
         <label for="remise_commercial">Remise commercial : </label>    
 
-        <input name="remise_commercial" type="number" id="remise_commercial" value="{{$devi->RemiseCommercial_Devis}}">    
+        <input name="remise_commercial" type="number" id="remise_commercial" value="{{$undevi->RemiseCommercial_Devis}}">    
 </div>
 
-
+ 
        
 
 
@@ -43,5 +43,5 @@
         <input type="submit" value="Envoyer !">  
      </form>   
 </div>
-
+@endforeach
 @endsection

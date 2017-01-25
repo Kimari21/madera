@@ -32,6 +32,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Devi extends Eloquent
 {
+	use FormAccessible;
 	protected $primaryKey = 'Id_Devis';
 	public $timestamps = false;
 
@@ -84,4 +85,15 @@ class Devi extends Eloquent
 	{
 		return $this->hasMany(\App\Models\Compose::class, 'Id_Devis');
 	}
+
+	protected $hidden = array(
+      'Id_Utilisateurs',
+		'Id_Clients',
+		'Id_Etat',
+		'DateCreation_Devis',
+		'DateModification_Devis',
+		'Id_Statut',
+		'PrixTotal_Devis',
+		'RemiseCommerciale_Devis'
+    );
 }

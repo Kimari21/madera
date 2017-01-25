@@ -7,16 +7,16 @@ use App\Quotation;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
-use App\Models;
+
 use Carbon\Carbon;
-	
+
 
 class deviController extends Controller
 {
     public function getlist()
 	{
 		 $devi = DB::table('devis')->get();
-
+		
         return view('devi/list_devi', ['devi' => $devi]);
 	}
 
@@ -45,7 +45,8 @@ $client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->se
 
 	public function postadd(Request $formulaire)
 	{
-		return  DB::table('devis')->insert([
+		
+		DB::table('devis')->insert([
             'Id_Utilisateurs' => 1,
             'Id_Clients' => $formulaire['id_client'],
             'Id_Etat' => 1,
@@ -54,18 +55,19 @@ $client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->se
             'RemiseCommerciale_Devis' =>$formulaire['remise_commercial'],
             'DateCreation_Devis' => Carbon::now(),
         ]);
-
-        		 $devi = DB::table('devis')->get();
-
+		
+      
+        		 $devi = DB::table('devis')->get;
         return view('devi/list_devi', ['devi' => $devi]);
 
 	}
 
 		public function postedit(Request $formulaire)
 		{ 
+
 			$devi =  DB::table('devis')->where('Id_Devis', '=', $formulaire['modifier'])->get();
-   		  $client = DB::table('clients')->get();
-$client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->select('clients.Id_Clients')->join('devis', 'clients.Id_Clients', '=', 'devis.Id_Clients'))->get();
+   		 
+		$client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->select('clients.Id_Clients')->join('devis', 'clients.Id_Clients', '=', 'devis.Id_Clients'))->get();
   		return view('devi/edit_devi', ['devi' => $devi], ['client' => $client] );
 		}
 

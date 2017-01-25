@@ -40,7 +40,7 @@ class moduleController extends Controller
 
 	public function postadd(Request $formulaire)
 	{
-		return  DB::table('module')->insert([
+		DB::table('module')->insert([
             'Id_Module' => 0,
             'Id_Gamme' => $formulaire['Id_Gamme'],
             'Nom_Module' =>$formulaire['Nom_Module'],

@@ -44,8 +44,8 @@ public function getlist()
 
 	public function postadd(Request $formulaire)
 	{
-		utf8_encode($formulaire);
-		return  DB::table('gamme')->insert([
+		
+		 DB::table('gamme')->insert([
 			'Id_Gamme' => 0,
             'Id_CaracteristiquesGamme' => $formulaire['caract_gamme'],
             'Prix_Gamme' => $formulaire['prix_gamme'],

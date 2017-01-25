@@ -12,7 +12,7 @@
      <div class="form-group">
     {!! Form::label('nom_client', 'Entrez le nom du client : ') !!}
 
-        {!! Form::text('nom_client', '$unclient->Nom_Clients') !!}
+        {!! Form::text('nom_client', $unclient->Nom_Clients) !!}
 </div>
 
    
@@ -20,22 +20,22 @@
    <div class="form-group">
         {!! Form::label('prenom_client', 'Entrez le prenom : ') !!}
 
-        {!! Form::text('prenom_client', '$unclient->Prenom_Clients') !!}
+        {!! Form::text('prenom_client', $unclient->Prenom_Clients) !!}
 </div>
    <div class="form-group">
         {!! Form::label('mail_client', 'Entrez le mail : ') !!}
 
-        {!! Form::text('mail_client', '$unclient->Mail_Clients') !!}
+        {!! Form::text('mail_client', $unclient->Mail_Clients) !!}
         </div>
       <div class="form-group">
     {!! Form::label('tel_domicile', 'Entrez le numéro de domicile : ') !!}
 
-        {!! Form::number('tel_domicile', '$unclient->TelephoneDomicile_Clients') !!}
+        {!! Form::number('tel_domicile', $unclient->TelephoneDomicile_Clients) !!}
 </div>
  <div class="form-group">
        {!! Form::label('tel_portable', 'Entrez le numéro de portable : ') !!}
 
-        {!! Form::number('tel_portable', '$unclient->TelephonePortable_Clients') !!}
+        {!! Form::number('tel_portable', $unclient->TelephonePortable_Clients) !!}
 </div>
    <div class="form-group">
            <label for="adresse_client">Adresse client:  </label>    
@@ -52,7 +52,7 @@
      <div class="form-group">
         {!! Form::label('code_postal', 'Entrez le code postal : ') !!}
 
-        {!! Form::number('code_postal', '$unclient->CodePostal_Clients') !!}
+        {!! Form::number('code_postal', $unclient->CodePostal_Clients) !!}
         </div>  
 
 

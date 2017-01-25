@@ -16,7 +16,7 @@
 
 {!! Form::open(['url' => 'edit_client'], ['class' => 'form-horizontal well']) !!}
 
-		{!! Form::hidden('invisible', $unclient->Id_Clients) !!}
+		{!! Form::hidden('modifier', $unclient->Id_Clients) !!}
         {!! Form::submit('Modifier', array('class'=> 'btn btn-Danger')) !!}
 
     {!! Form::close() !!}
@@ -25,7 +25,7 @@
 
 {!! Form::open(['url' => 'supp_client'], ['class' => 'form-horizontal well']) !!}
 
-{!! Form::hidden('invisible', $unclient->Id_Clients) !!}
+{!! Form::hidden('supprimer', $unclient->Id_Clients) !!}
         {!! Form::submit('Supprimer', array('class'=> 'btn btn-Danger')) !!}
 
     {!! Form::close() !!}
