@@ -1,63 +1,63 @@
 @extends('template')
 
 @section('titre')
-    Gamme
+    Editer Client
 @endsection
 
 @section('contenu')
 <div class='col-md-4 col-md-offset-4'>
-   @foreach ($client as $unclient)
-{!! Form::open(['url' => 'validedit_client']) !!}
- 
+  
+{!! Form::open(['url' => 'valid_edit_client']) !!}
+ {!! Form::hidden('Id_Clients', $client->Id_Clients) !!}
      <div class="form-group">
-    {!! Form::label('nom_client', 'Entrez le nom du client : ') !!}
+    {!! Form::label('Nom_Clients', 'Entrez le nom du client : ') !!}
 
-        {!! Form::text('nom_client', $unclient->Nom_Clients) !!}
+        {!! Form::text('Nom_Clients', $client->Nom_Clients) !!}
 </div>
 
    
 
    <div class="form-group">
-        {!! Form::label('prenom_client', 'Entrez le prenom : ') !!}
+        {!! Form::label('Prenom_Clients', 'Entrez le prenom : ') !!}
 
-        {!! Form::text('prenom_client', $unclient->Prenom_Clients) !!}
+        {!! Form::text('Prenom_Clients', $client->Prenom_Clients) !!}
 </div>
    <div class="form-group">
-        {!! Form::label('mail_client', 'Entrez le mail : ') !!}
+        {!! Form::label('Mail_Clients', 'Entrez le mail : ') !!}
 
-        {!! Form::text('mail_client', $unclient->Mail_Clients) !!}
+        {!! Form::text('Mail_Clients', $client->Mail_Clients) !!}
         </div>
       <div class="form-group">
-    {!! Form::label('tel_domicile', 'Entrez le numéro de domicile : ') !!}
+    {!! Form::label('TelephoneDomicile_Clients', 'Entrez le numéro de domicile : ') !!}
 
-        {!! Form::number('tel_domicile', $unclient->TelephoneDomicile_Clients) !!}
+        {!! Form::number('TelephoneDomicile_Clients', $client->TelephoneDomicile_Clients) !!}
 </div>
  <div class="form-group">
-       {!! Form::label('tel_portable', 'Entrez le numéro de portable : ') !!}
+       {!! Form::label('TelephonePortable_Clients', 'Entrez le numéro de portable : ') !!}
 
-        {!! Form::number('tel_portable', $unclient->TelephonePortable_Clients) !!}
+        {!! Form::number('TelephonePortable_Clients', $client->TelephonePortable_Clients) !!}
 </div>
    <div class="form-group">
-           <label for="adresse_client">Adresse client:  </label>    
+           <label for="Adresse_Clients">Adresse client:  </label>    
   
-      <input name="adresse_client" type="text" id="adresse_client" value="{{$unclient->Adresse_Clients}}">   </input>         
+      <input name="Adresse_Clients" type="text" id="Adresse_Clients" value="{{$client->Adresse_Clients}}">   </input>         
 </div>
    <div class="form-group">
-        <label for="ville_client">Entrez la ville :  </label>    
+        <label for="Ville_Clients">Entrez la ville :  </label>    
   
-      <input name="ville_client" type="text" id="ville_client" value="{{$unclient->Ville_Clients}}">   </input>    
+      <input name="Ville_Clients" type="text" id="Ville_Clients" value="{{$client->Ville_Clients}}">   </input>    
         </div>  
   
 
      <div class="form-group">
-        {!! Form::label('code_postal', 'Entrez le code postal : ') !!}
+        {!! Form::label('CodePostal_Clients', 'Entrez le code postal : ') !!}
 
-        {!! Form::number('code_postal', $unclient->CodePostal_Clients) !!}
+        {!! Form::number('CodePostal_Clients', $client->CodePostal_Clients) !!}
         </div>  
 
 
         {!! Form::submit('Envoyer !') !!}
     {!! Form::close() !!}
 </div>
-   @endforeach
+  
 @endsection

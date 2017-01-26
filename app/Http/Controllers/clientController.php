@@ -52,10 +52,26 @@ public function postadd(Request $formulaire)
 
 		public function postedit(Request $formulaire)
 		{ 
-			$client =  DB::table('clients')->where('Id_Clients', '=', $formulaire['modifier'])->get();
+			$client =  Client::findOrFail($formulaire['modifier']);
    		 
   		return view('client/edit_client', compact('client'));
 		}
+
+
+	public function postvalidedit(Request $formulaire)
+	{
+		
+			Client::where('Id_Clients', $formulaire['Id_Clients'])
+		->update(['Nom_Clients' => $formulaire['Nom_Clients'], 'Prenom_Clients' => $formulaire['Prenom_Clients'],
+			'Mail_Clients' =>$formulaire['Mail_Clients'], 'TelephoneDomicile_Clients' =>$formulaire['TelephoneDomicile_Clients'], 'TelephonePortable_Clients' =>$formulaire['TelephonePortable_Clients'], 'Adresse_Clients' =>$formulaire['Adresse_Clients'], 'Ville_Clients' =>$formulaire['Ville_Clients'], 'CodePostal_Clients' =>$formulaire['CodePostal_Clients']]);
+		 
+
+		
+		
+		 $client = DB::table('clients')->get();
+
+       return redirect('list_client'); 
+	}
 
 
 		public function postsupp(Request $formulaire)

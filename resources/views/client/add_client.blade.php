@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('titre')
-    Gamme
+    Ajout Client
 @endsection
 
 @section('contenu')
