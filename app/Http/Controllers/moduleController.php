@@ -68,6 +68,36 @@ class moduleController extends Controller
 		return view('module/edit_module', ['module' => $module], ['gamme' => $gamme] );
 	}
 
+
+	public function postvalidedit(Request $formulaire)
+	{
+		if ($formulaire['gamme'] != null) {
+			Module::where('Id_Module', $formulaire['Id_Module'])
+		->update(['Nom_Module' => $formulaire['Nom_Module']], ['Nature_Module' => $formulaire['Nature_Module']],
+			['Caracteristique_Module' => $formulaire['Caracteristique_Module']], ['Unite_Module' =>$formulaire['Unite_Module'], 
+			['Quantite_module' => $formulaire['Quantite_module']], ['Proprietaire_Module' => $formulaire['Proprietaire_Module']],
+			 ['Hauteur_Module' =>$formulaire['Hauteur_Module'], ['Longueur_Module' =>$formulaire['Longueur_Module'], 
+			['AngleEntrant_Module' => $formulaire['AngleEntrant_Module']], ['AngleSortant_Module' => $formulaire['AngleSortant_Module']],
+			 ['Epaisseur_Module' =>$formulaire['Epaisseur_Module'],
+			 ['Id_Gamme' =>$formulaire['Id_Gamme']]);
+		 
+
+		}
+		else
+		{
+
+			Gamme::where('Id_Gamme', $formulaire['Id_Gamme'])
+		->update(['Prix_Gamme' => $formulaire['prix_gamme']], ['Nom_Gamme' => $formulaire['nom_gamme']], 
+			['Proprietaire_Gamme' =>$formulaire['prop_gamme']]);
+		 
+		}
+		
+		 $gamme = DB::table('gamme')->get();
+
+       return redirect('list_gamme'); 
+	}
+
+
 	public function postsupp(Request $formulaire)
 	{
 		DB::table('module')->where('Id_Module', '=', $formulaire['supprimer'])->delete();
