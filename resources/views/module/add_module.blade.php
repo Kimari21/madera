@@ -58,7 +58,7 @@
         </div>
    
 
-</div>
+
    <div class="form-group">
         {!! Form::label('AngleEntrant_Module', 'Angle entrant : ') !!}
 

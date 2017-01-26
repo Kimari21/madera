@@ -33,8 +33,11 @@
   {!! Form::label('caract_gamme', 'Choisissez une caractéristique de gamme : ') !!}
          <select name="caract_gamme" id="caract_gamme" class="form-control">
       @foreach($caract_gamme as $uncaract_gamme)
-   
+          @if($gamme->Id_CaracteristiquesGamme==$uncaract_gamme->Id_CaracteristiquesGamme)
+        <option value="{{$uncaract_gamme->Id_CaracteristiquesGamme}}" selected>{{$uncaract_gamme->Nom_Caracteristiques_Gamme}}</option>
+        @else
         <option value="{{$uncaract_gamme->Id_CaracteristiquesGamme}}">{{$uncaract_gamme->Nom_Caracteristiques_Gamme}}</option>
+        @endif
       @endforeach
     </select>
 </div>

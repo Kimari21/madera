@@ -7,7 +7,7 @@
 @section('contenu')
 <div class='col-md-4 col-md-offset-4'>
 {!! Form::open(['url' => 'valid_edit_module']) !!}
- 
+ {!! Form::hidden('Id_Module', $module->Id_Module) !!}
      <div class="form-group">
     {!! Form::label('Nom_Module', 'Entrez le nom du module : ') !!}
 
@@ -81,8 +81,12 @@
   {!! Form::label('Id_Gamme', 'Gamme : ') !!}
          <select name="Id_Gamme" id="Id_Gamme" class="form-control">
       @foreach($gamme as $unegamme)
-   
+        @if($module->Id_Gamme==$unegamme->Id_Gamme)
+         <option value="{{$unegamme->Id_Gamme}}" selected>{{$unegamme->Id_Gamme}}</option>
+        @else
         <option value="{{$unegamme->Id_Gamme}}">{{$unegamme->Id_Gamme}}</option>
+        @endif
+       
       @endforeach
     </select>
 </div>

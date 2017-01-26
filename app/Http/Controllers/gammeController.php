@@ -22,7 +22,7 @@ public function getlist()
 	public function getadd()
 	{	
 		 
-		  $caract_gamme = DB::table('caracteristiques_gamme')->whereNotIn('Id_CaracteristiquesGamme',DB::table('caracteristiques_gamme')->select('gamme.Id_CaracteristiquesGamme')->join('gamme', 'caracteristiques_gamme.Id_CaracteristiquesGamme', '=', 'gamme.Id_CaracteristiquesGamme'))->get();
+		  $caract_gamme = DB::table('caracteristiques_gamme')->get();
 		
 		return view('gamme/add_gamme', ['caract_gamme' => $caract_gamme]);
 	}
@@ -64,28 +64,20 @@ public function getlist()
 	{
 		$gamme =  Gamme::findOrFail($formulaire['modifier']);
    		 
-		  $caract_gamme = DB::table('caracteristiques_gamme')->whereNotIn('Id_CaracteristiquesGamme',DB::table('caracteristiques_gamme')->select('gamme.Id_CaracteristiquesGamme')->join('gamme', 'caracteristiques_gamme.Id_CaracteristiquesGamme', '=', 'gamme.Id_CaracteristiquesGamme'))->get();
+		  $caract_gamme = DB::table('caracteristiques_gamme')->get();
   		return view('gamme/edit_gamme', ['caract_gamme' => $caract_gamme], ['gamme' => $gamme] );
 	}
 
 
 	public function postvalidedit(Request $formulaire)
 	{
-		if ($formulaire['caract_gamme'] != null) {
+		
 			Gamme::where('Id_Gamme', $formulaire['Id_Gamme'])
-		->update(['Id_CaracteristiquesGamme' => $formulaire['caract_gamme']], ['Prix_Gamme' => $formulaire['prix_gamme']],
-			['Nom_Gamme' => $formulaire['nom_gamme']], ['Proprietaire_Gamme' =>$formulaire['prop_gamme']]);
+		->update(['Id_CaracteristiquesGamme' => $formulaire['caract_gamme'], 'Prix_Gamme' => $formulaire['prix_gamme'],
+			'Nom_Gamme' => $formulaire['nom_gamme'], 'Proprietaire_Gamme' =>$formulaire['prop_gamme']]);
 		 
 
-		}
-		else
-		{
-
-			Gamme::where('Id_Gamme', $formulaire['Id_Gamme'])
-		->update(['Prix_Gamme' => $formulaire['prix_gamme']], ['Nom_Gamme' => $formulaire['nom_gamme']], 
-			['Proprietaire_Gamme' =>$formulaire['prop_gamme']]);
-		 
-		}
+		
 		
 		 $gamme = DB::table('gamme')->get();
 
