@@ -24,7 +24,7 @@ class deviController extends Controller
 	{
 		
 				 $client = DB::table('clients')->get();
-$client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->select('clients.Id_Clients')->join('devis', 'clients.Id_Clients', '=', 'devis.Id_Clients'))->get();
+$client = DB::table('clients')->get();
         return view('devi/add_devi', ['client' => $client]);
     }
 
@@ -65,11 +65,28 @@ $client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->se
 		public function postedit(Request $formulaire)
 		{ 
 
-			$devi =  DB::table('devis')->where('Id_Devis', '=', $formulaire['modifier'])->get();
+			$devi =  Devi::findOrFail($formulaire['modifier']);
    		 
-		$client = DB::table('clients')->whereNotIn('Id_Clients',DB::table('clients')->select('clients.Id_Clients')->join('devis', 'clients.Id_Clients', '=', 'devis.Id_Clients'))->get();
-  		return view('devi/edit_devi', ['devi' => $devi], ['client' => $client] );
+		$client = DB::table('clients')->get();
+		$statut = DB::table('statut')->get();
+		$etat = DB::table('etat')->get();
+  		return view('devi/edit_devi', ['devi' => $devi, 'client' => $client,'etat' => $etat ,'statut' => $statut] );
 		}
+
+	public function postvalidedit(Request $formulaire)
+	{
+		
+			Devi::where('Id_Devis', $formulaire['Id_Devis'])
+		->update(['Id_Clients' => $formulaire['Id_Clients'], 'Id_Etat' => $formulaire['Id_Etat'],
+			'DateModification_Devis' => Carbon::now(), 'Id_Statut' =>$formulaire['Id_Statut'], 'PrixTotal_Devis' =>$formulaire['PrixTotal_Devis'], 'RemiseCommerciale_Devis' =>$formulaire['RemiseCommerciale_Devis']]);
+		 
+
+		
+		
+		 $devi = DB::table('devis')->get();
+
+       return redirect('list_devi'); 
+	}
 
 	public function postsupp(Request $formulaire)
 	{

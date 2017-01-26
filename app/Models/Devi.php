@@ -32,7 +32,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Devi extends Model
 {
-	use FormAccessible;
+
 	protected $primaryKey = 'Id_Devis';
 	public $timestamps = false;
 
