@@ -45,7 +45,7 @@ public function postadd(Request $formulaire)
       
         ]);
 
-         $client = DB::table('client')->get();
+         $client = DB::table('clients')->get();
 
         return view('client/list_client', ['client' => $client]);
 	}

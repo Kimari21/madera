@@ -6,5 +6,8 @@
             <file>file:/C:/wamp/www/Madera/.env</file>
             <file>file:/C:/wamp/www/Madera/database/migrations/2014_10_12_000000_create_users_table.php</file>
         </group>
+        <group name="ufc">
+            <file>file:/C:/wamp/www/madera/public/index.php</file>
+        </group>
     </open-files>
 </project-private>

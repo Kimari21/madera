@@ -30,11 +30,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/madera/public/list_devi">Devis <span class="sr-only">(current)</span></a></li>
-        <li><a href="/madera/public/list_client">Clients</a></li>
-        <li><a href="/madera/public/list_module">Module </a></li>
-               <li><a href="/madera/public/list_gamme">Gamme </a></li>
-        <li><a href="/madera/public/faq">FAQ </a></li>
+        <li><a href="{!! url('list_devi') !!}">Devis <span class="sr-only">(current)</span></a></li>
+        <li><a href="{!! url('list_client') !!}">Clients</a></li>
+        <li><a href="{!! url('list_module') !!}">Module </a></li>
+               <li><a href="{!! url('list_gamme') !!}">Gamme </a></li>
+        <li><a href="{!! url('faq') !!}">FAQ </a></li>
         
       </ul>
       
