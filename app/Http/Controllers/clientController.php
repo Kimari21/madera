@@ -20,6 +20,16 @@ class clientController extends Controller
         return view('client/list_client', ['client' => $client]);
 	}
 
+	public function getdevi()
+	{
+		 $module = DB::table('module')->get();
+		  $gamme = DB::table('gamme')->get();
+
+				 
+         return view('client/devi_client', ['gamme' => $gamme], ['module' => $module]);
+    }
+
+
 	public function getadd()
 	{
 		

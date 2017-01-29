@@ -117,8 +117,8 @@ Route::get('/edit_utilisateur', ['uses' => 'utilisateurController@getedit', 'as'
 Route::get('/supp_utilisateur', ['uses' => 'utilisateurController@getsupp', 'as' => 'supp_utilisateurs']);
 
 
-
-
+Route::get('/devi_client', ['uses' => 'clientController@getdevi', 'as' => 'devi_client']);
+Route::post('/devi_client', ['uses' => 'clientController@postdevi', 'as' => 'devi_client']);
 
 
 Route::post('/list_caract_gamme', ['uses' => 'caracteristiques_gammeController@postlist', 'as' => 'list_caract_gamme']);
