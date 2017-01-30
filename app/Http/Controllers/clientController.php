@@ -30,6 +30,63 @@ class clientController extends Controller
     }
 
 
+	public function postdevi(Request $formulaire)
+	{
+		 $prix_gamme = DB::table('gamme')->where('Id_Gamme', '=', $formulaire['gamme'])->first();
+		  $prix_toit = DB::table('module')->where('Id_Module', '=', $formulaire['module_1'])->first();
+		  $prix_sol = DB::table('module')->where('Id_Module', '=', $formulaire['module_2'])->first();
+		  $prix_mur = DB::table('module')->where('Id_Module', '=', $formulaire['module_3'])->first();
+		  $prix_terrasse = DB::table('module')->where('Id_Module', '=', $formulaire['module_4'])->first();
+		  
+				 
+		  $prix_total = $prix_gamme->Prix_Gamme + $prix_toit->Prix_Module + $prix_sol->Prix_Module + $prix_mur->Prix_Module +$prix_terrasse->Prix_Module;
+
+		   DB::table('devis')->insert([
+			'Id_Devis' => 0,
+            'Id_Utilisateurs' => 1,
+            'Id_Clients' => 1,
+            'Id_Etat' => 1,
+            'DateCreation_Devis' => Carbon::now(),
+            'Id_Statut' => 1,
+            'PrixTotal_Devis' => $prix_total,
+           
+        ]);
+
+		   $devi = DB::table('devis')->max('Id_Devis');
+
+		   DB::table('compose')->insert([
+			'Id_Compose' => 0,
+            'Id_Devis' => $devi,
+            'Id_Module' => $formulaire['module_1'],
+                      
+        ]);
+
+DB::table('compose')->insert([
+			'Id_Compose' => 0,
+            'Id_Devis' => $devi,
+            'Id_Module' => $formulaire['module_2'],
+                      
+        ]);
+
+DB::table('compose')->insert([
+			'Id_Compose' => 0,
+            'Id_Devis' => $devi,
+            'Id_Module' => $formulaire['module_3'],
+                      
+        ]);
+
+DB::table('compose')->insert([
+			'Id_Compose' => 0,
+            'Id_Devis' => $devi,
+            'Id_Module' => $formulaire['module_4'],
+                      
+        ]);
+
+
+         return view('welcome');
+    }
+
+
 	public function getadd()
 	{
 		
