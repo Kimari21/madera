@@ -5,7 +5,7 @@
 @endsection
 @section('contenu')
 
-   <div class='col-md-12'>
+   <div class='col-md-4 col-md-offset-4'>
         <div class='comment'>
             <table border="1px solid black">
               <th>Nom</th>  <th>Prenom</th>      <th>mail</th> 
