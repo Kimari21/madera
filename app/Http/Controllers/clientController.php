@@ -44,7 +44,7 @@ class clientController extends Controller
 		   DB::table('devis')->insert([
 			'Id_Devis' => 0,
             'Id_Utilisateurs' => 1,
-            'Id_Clients' => 1,
+            'Id_Clients' => 2,
             'Id_Etat' => 1,
             'DateCreation_Devis' => Carbon::now(),
             'Id_Statut' => 1,
