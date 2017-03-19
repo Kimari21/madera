@@ -4,37 +4,40 @@
     Clients
 @endsection
 @section('contenu')
+<div class="row">
+<div class='col s6  offset-s3'>
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Liste clients</h4></li>
+        @foreach ($client as $unclient)
+        <li class="collection-item"><div>{{$unclient->Nom_Clients}}  {{$unclient->Prenom_Clients}}  {{$unclient->Mail_Clients}}<a href="#!" class="secondary-content"><i class="material-icons">{!! Form::open(['url' => 'edit_client'], ['class' => 'material-icons']) !!}
 
-   <div class='col-md-4 col-md-offset-4'>
-        <div class='comment'>
-            <table border="1px solid black">
-              <th>Nom</th>  <th>Prenom</th>      <th>mail</th> 
-               @foreach ($client as $unclient)
-             
-             <tr><th style="width:200px; height:50px;"> {{$unclient->Nom_Clients}}</th><th style="width:200px; height:50px;"> {{$unclient->Prenom_Clients}}</th><th style="width:200px; height:50px;"> {{$unclient->Mail_Clients}}</th>
-             <th>
-
-{!! Form::open(['url' => 'edit_client'], ['class' => 'form-horizontal well']) !!}
-
-		{!! Form::hidden('modifier', $unclient->Id_Clients) !!}
+        {!! Form::hidden('modifier', $unclient->Id_Clients) !!}
         {!! Form::submit('Modifier', array('class'=> 'btn btn-Danger')) !!}
 
     {!! Form::close() !!}
 
-    <br>
-
-{!! Form::open(['url' => 'supp_client'], ['class' => 'form-horizontal well']) !!}
+    {!! Form::open(['url' => 'supp_client'], ['class' => 'material-icons']) !!}
 
 {!! Form::hidden('supprimer', $unclient->Id_Clients) !!}
         {!! Form::submit('Supprimer', array('class'=> 'btn btn-Danger')) !!}
 
     {!! Form::close() !!}
-
-               </th> </tr>
+</i></a></div></li>
+        
+     
             
+   
+        
              @endforeach
-            </table>
+          </ul>
         </div>
+</div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
         {!! Form::open(['url' => 'add_client', 'method' =>'GET'], ['class' => 'form-horizontal well']) !!}
 
         {!! Form::submit('Ajouter un client', array('class'=> 'btn')) !!}
