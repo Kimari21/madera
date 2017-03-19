@@ -35,8 +35,7 @@ Latest compiled and minified CSS
 </head>
 <body>
 
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
    
       <!--Import jQuery before materialize.js-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
@@ -45,7 +44,7 @@ Latest compiled and minified CSS
   <nav>
     <div class="nav-wrapper" style="background-color:#4db6ac;">
       <a href="{!! url('') !!}" class="brand-logo">Accueil</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
 <li><a href="{!! url('list_devi') !!}">Devis </a></li>
         <li><a href="{!! url('list_client') !!}">Clients</a></li>
@@ -65,7 +64,11 @@ Latest compiled and minified CSS
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
 
-
+<ul id="slide-out" class="side-nav">
+      <li><a href="#!">First Sidebar Link</a></li>
+      <li><a href="#!">Second Sidebar Link</a></li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
 
   
                   
