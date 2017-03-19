@@ -6,12 +6,13 @@
 
 @section('contenu')
 
- <div class='col-md-4 col-md-offset-4'>
+<div class="row">
+ <div class='col s4 offset-s4'>
 {!! Form::open(['url' => 'add_client']) !!}
  
      <div class="form-group">
     {!! Form::label('nom_client', 'Entrez le nom du client : ') !!}
-
+ <i class="material-icons prefix">account_circle</i>
         {!! Form::text('nom_client') !!}
 </div>
 
@@ -19,7 +20,7 @@
 
    <div class="form-group">
         {!! Form::label('prenom_client', 'Entrez le prenom : ') !!}
-
+ <i class="material-icons prefix">account_circle</i>
         {!! Form::text('prenom_client') !!}
 </div>
    <div class="form-group">
@@ -29,12 +30,12 @@
         </div>
       <div class="form-group">
     {!! Form::label('tel_domicile', 'Entrez le numéro de domicile : ') !!}
-
+<i class="material-icons prefix">phone</i>
         {!! Form::number('tel_domicile') !!}
 </div>
  <div class="form-group">
        {!! Form::label('tel_portable', 'Entrez le numéro de portable : ') !!}
-
+<i class="material-icons prefix">phone</i>
         {!! Form::number('tel_portable') !!}
 </div>
    <div class="form-group">
@@ -56,7 +57,8 @@
         </div>  
 
 
-        {!! Form::submit('Envoyer !') !!}
+        {!! Form::submit('Envoyer !', array('class'=> 'btn')) !!}
     {!! Form::close() !!}
+</div>
 </div>
 @endsection

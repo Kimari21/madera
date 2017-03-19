@@ -5,44 +5,55 @@
 @endsection
 @section('contenu')
 
-   <div class='col-md-4 col-md-offset-4'>
-        <div class='comment'>
-            <table border="1px solid black">
-              <th>utilisateur</th>  <th>client</th>      <th>etat</th>  <th>prix</th>  
-               @foreach ($devi as $undevi)
-             
-             <tr><th style="width:200px; height:50px;"> {{$undevi->Id_Utilisateurs}}</th><th style="width:200px; height:50px;"> {{$undevi->Id_Clients}}</th><th style="width:200px; height:50px;"> {{$undevi->Id_Etat}}</th><th  style="width:200px; height:50px;">    {{$undevi->PrixTotal_Devis}}   </th>
-             <th>
+   
+               
+       
 
+
+
+<div class="row">
+<div class='col s6  offset-s3'>
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Liste devis</h4></li>
+        @foreach ($devi as $undevi)
+        <li class="collection-item"><div>{{$undevi->Id_Utilisateurs}} &nbsp {{$undevi->Id_Clients}}  &nbsp  &nbsp  &nbsp  &nbsp  {{$undevi->Id_Etat}}&nbsp  &nbsp {{$undevi->PrixTotal_Devis}}<div class='right hide-on-med-and-down'>
 {!! Form::open(['url' => 'edit_devi'], ['class' => 'form-horizontal well']) !!}
 
-		{!! Form::hidden('modifier', $undevi->Id_Devis) !!}
+        {!! Form::hidden('modifier', $undevi->Id_Devis) !!}
         {!! Form::submit('Modifier', array('class'=> 'btn btn-Danger')) !!}
 
     {!! Form::close() !!}
-
-    <br>
-
+   
 {!! Form::open(['url' => 'supp_devi'], ['class' => 'form-horizontal well']) !!}
 
 {!! Form::hidden('supprimer', $undevi->Id_Devis) !!}
         {!! Form::submit('Supprimer', array('class'=> 'btn btn-Danger')) !!}
 
-    {!! Form::close() !!}
-
-               </th> </tr>
+    {!! Form::close() !!}</div>
+</i></a></div> <br><br></li>
+        
+     
             
+   
+        
              @endforeach
-            </table>
+          </ul>
         </div>
-        {!! Form::open(['url' => 'add_devi', 'method' =>'GET'], ['class' => 'form-horizontal well']) !!}
+</div>
+        <br>
+        <br>
+
+   
+<div class="row">
+<div class='col s6  offset-s3'>
+       {!! Form::open(['url' => 'add_devi', 'method' =>'GET'], ['class' => 'form-horizontal well']) !!}
 
         {!! Form::submit('Ajouter un devi', array('class'=> 'btn')) !!}
 
     {!! Form::close() !!}
 </div>
 
-
+</div>
 
 @endsection
 

@@ -7,8 +7,8 @@
 @section('contenu')
 
 
-
- <div class='col-md-4 col-md-offset-4'>
+<div class="row">
+ <div class='col s4  offset-s4'>
 
  
 
@@ -26,22 +26,30 @@
 
         <input name="remise_commercial" type="number" id="remise_commercial">    
 </div>
-
+</div>
 
        
 
 
-   
-   <div class="form-group">
-	 <label for="Id_Clients">Choisir un client : </label>   
-    		 <select name="id_client" id="id_client" class="form-control">
+   <div class="row">
+   <div class="input-field col s4 offset-s4">
+ <label for="Id_Clients">Choisir un client : </label>    
+  </div>
+</div>
+<br>
+<div class="row">
+   <div class="input-field col s4 offset-s4">
+  
+    		 <select name="id_client" id="id_client" class="browser-default">
     	@foreach($client as $unclient)
    
       	<option value="{{$unclient->Id_Clients}}">{{$unclient->Nom_Clients}}</option>
     	@endforeach
     </select>
-</div>
-        <input type="submit" value="Envoyer !">  
-     </form>   
+</div></div>
+<div class="row">
+   <div class="input-field col s4 offset-s4">
+        <input type="submit" class="btn" value="Envoyer !">  
+     </div></div></form>   
 </div>
 @endsection

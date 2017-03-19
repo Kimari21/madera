@@ -5,8 +5,9 @@
 @endsection
 
 @section('contenu')
+<div class="row">
+ <div class='col s4  offset-s4'>
 
- <div class='col-md-4 col-md-offset-4'>
 {!! Form::open(['url' => 'add_gamme']) !!}
  
      <div class="form-group">
@@ -27,17 +28,26 @@
 
         {!! Form::number('prix_gamme') !!}
         </div>
+   <div class="row">
+   <div class="input-field col s4">
+      {!! Form::label('caract_gamme', 'Choisissez une caractéristique de gamme : ') !!}
+     </div>
+          </div>
+          <br>
+         <div class="row">
+   <div class="input-field col s4">
+ 
+             <select name="caract_gamme" id="caract_gamme" class="browser-default">
+      @foreach($caract_gamme as $uncaract_gamme)
    
-   <div class="form-group">
-	{!! Form::label('caract_gamme', 'Choisissez une caractéristique de gamme : ') !!}
-    		 <select name="caract_gamme" id="caract_gamme" class="form-control">
-    	@foreach($caract_gamme as $uncaract_gamme)
-   
-      	<option value="{{$uncaract_gamme->Id_CaracteristiquesGamme}}">{{$uncaract_gamme->Nom_Caracteristiques_Gamme}}</option>
-    	@endforeach
+        <option value="{{$uncaract_gamme->Id_CaracteristiquesGamme}}">{{$uncaract_gamme->Nom_Caracteristiques_Gamme}}</option>
+      @endforeach
     </select>
-</div>
-        {!! Form::submit('Envoyer !') !!}
+     
+</div></div>
+ 
+        {!! Form::submit('Envoyer !', array('class'=> 'btn')) !!}
     {!! Form::close() !!}
 </div>
+<div>
 @endsection

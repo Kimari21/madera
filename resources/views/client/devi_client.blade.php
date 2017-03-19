@@ -13,7 +13,8 @@
   } );
   </script>
 
-<div class='col-md-4 col-md-offset-4'>
+<div class="row">
+<div class='col s4  offset-s4'>
 {!! Form::open(['url' => 'devi_client', 'id' => 'form']) !!}
 
  <div id="tabs">
@@ -112,7 +113,7 @@
  {!! Form::submit('Envoyer !') !!}
     {!! Form::close() !!}
 </div>
-  
+  </div>
 <script>
   
     //$("option").filter(function( index ) {$( this ).attr( "id" ) === $('.gamme').value;}).style.display = 'none';

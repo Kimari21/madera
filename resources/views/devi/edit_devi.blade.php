@@ -6,9 +6,10 @@
 
 @section('contenu')
 
-  
- <div class='col-md-4 col-md-offset-4'>
+  <div class="row">
+ <div class='col s4  offset-s4'>
 
+ 
 {!! Form::open(['url' => 'valid_edit_devi']) !!}
 
 {!! Form::hidden('Id_Devis', $devi->Id_Devis) !!}
@@ -25,9 +26,17 @@
 
         {!! Form::number('RemiseCommerciale_Devis', $devi->RemiseCommerciale_Devis) !!}
 </div>
-    <div class="form-group">
+
+<div class="row">
+   <div class="input-field col s4">
   {!! Form::label('Id_Clients', 'Choisissez le client : ') !!}
-         <select name="Id_Clients" id="Id_Clients" class="form-control">
+  </div>
+</div>
+<br>
+<div class="row">
+   <div class="input-field col s4">
+ 
+         <select name="Id_Clients" id="Id_Clients" class="browser-default">
       @foreach($client as $unclient)
           @if($devi->Id_Clients==$unclient->Id_Clients)
         <option value="{{$unclient->Id_Clients}}" selected>{{$unclient->Nom_Clients}}</option>
@@ -36,11 +45,20 @@
         @endif
       @endforeach
     </select>
-</div>
+</div></div>
 
-   <div class="form-group">
+
+<div class="row">
+   <div class="input-field col s4">
   {!! Form::label('Id_Etat', 'Choisissez un etat : ') !!}
-         <select name="Id_Etat" id="Id_Etat" class="form-control">
+  </div>
+</div>
+<br>
+<div class="row">
+   <div class="input-field col s4">
+
+  
+         <select name="Id_Etat" id="Id_Etat" class="browser-default">
       @foreach($etat as $unetat)
           @if($devi->Id_Etat==$unetat->Id_Etat)
         <option value="{{$unetat->Id_Etat}}" selected>{{$unetat->Description_Etat}}</option>
@@ -50,10 +68,19 @@
       @endforeach
     </select>
 </div>
-   
-   <div class="form-group">
+   </div>
+
+   <div class="row">
+   <div class="input-field col s4">
   {!! Form::label('Id_Statut', 'Choisissez un statut : ') !!}
-         <select name="Id_Statut" id="Id_Statut" class="form-control">
+  </div>
+</div>
+<br>
+<div class="row">
+   <div class="input-field col s4">
+
+ 
+         <select name="Id_Statut" id="Id_Statut" class="browser-default">
       @foreach($statut as $unstatut)
           @if($devi->Id_Statut==$unstatut->Id_Statut)
         <option value="{{$unstatut->Id_Statut}}" selected>{{$unstatut->Description_Statut}}</option>
@@ -62,10 +89,10 @@
         @endif
       @endforeach
     </select>
-</div>
-        {!! Form::submit('Envoyer !') !!}
+</div></div>
+        {!! Form::submit('Envoyer !', array('class'=> 'btn')) !!}
   
     {!! Form::close() !!}
 </div>
-
+</div>
 @endsection
