@@ -160,6 +160,8 @@
     {!! Form::close() !!}
 </div>
   </div>
+
+  
 <script>
   
     //$("option").filter(function( index ) {$( this ).attr( "id" ) === $('.gamme').value;}).style.display = 'none';

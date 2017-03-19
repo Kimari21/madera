@@ -40,11 +40,11 @@ Latest compiled and minified CSS
       <!--Import jQuery before materialize.js-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      
   <nav>
     <div class="nav-wrapper" style="background-color:#4db6ac;">
       <a href="{!! url('') !!}" class="brand-logo">Accueil</a>
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+      
       <ul class="right hide-on-med-and-down">
 <li><a href="{!! url('list_devi') !!}">Devis </a></li>
         <li><a href="{!! url('list_client') !!}">Clients</a></li>
@@ -52,7 +52,7 @@ Latest compiled and minified CSS
                <li><a href="{!! url('list_gamme') !!}">Gamme </a></li>
         <li><a href="{!! url('faq') !!}">FAQ </a></li>
       </ul>
-        </nav>
+        
         
       <ul class="side-nav" id="slide-out">
 <li><a href="{!! url('list_devi') !!}">Devis </a></li>
@@ -63,33 +63,18 @@ Latest compiled and minified CSS
       </ul>
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
+</nav>
 
-<ul id="slide-out" class="side-nav">
-      <li><a href="#!">First Sidebar Link</a></li>
-      <li><a href="#!">Second Sidebar Link</a></li>
-    </ul>
-    <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-
-  
-                  
 
 <script type="text/javascript">
- 
-  $('.button-collapse').sideNav({
-      menuWidth: 300, // Default is 300
-      edge: 'right', // Choose the horizontal origin
-      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      draggable: true // Choose whether you can drag to open on touch screens
-    }
-  );
+ $(document).ready(function(){
 
+    //collpase for mobile button
+    $(".button-collapse").sideNav();
 
-  // Show sideNav
-  $('.button-collapse').sideNav('show');
-  // Hide sideNav
-  $('.button-collapse').sideNav('hide');
-  // Destroy sideNav
-  $('.button-collapse').sideNav('destroy');
+});
+
+  
         
 </script>        
 
