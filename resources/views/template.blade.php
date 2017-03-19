@@ -43,7 +43,7 @@ Latest compiled and minified CSS
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper" style="background-color:#4db6ac;">
       <a href="{!! url('') !!}" class="brand-logo">Accueil</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
@@ -53,32 +53,21 @@ Latest compiled and minified CSS
                <li><a href="{!! url('list_gamme') !!}">Gamme </a></li>
         <li><a href="{!! url('faq') !!}">FAQ </a></li>
       </ul>
-      <ul class="side-nav" id="mobile-demo">
+        </nav>
+        
+      <ul class="side-nav" id="slide-out">
 <li><a href="{!! url('list_devi') !!}">Devis </a></li>
         <li><a href="{!! url('list_client') !!}">Clients</a></li>
         <li><a href="{!! url('list_module') !!}">Module </a></li>
                <li><a href="{!! url('list_gamme') !!}">Gamme </a></li>
         <li><a href="{!! url('faq') !!}">FAQ </a></li>
       </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-  </nav>
 
-<ul id="slide-out" class="side-nav">
-    <li><div class="userView">
-      <div class="background">
-        <img src="images/office.jpg">
-      </div>
-      <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-      <a href="#!name"><span class="white-text name">John Doe</span></a>
-      <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
-    </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
-    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-  </ul>
-  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+
+  
                   
 
 <script type="text/javascript">
@@ -90,6 +79,14 @@ Latest compiled and minified CSS
       draggable: true // Choose whether you can drag to open on touch screens
     }
   );
+
+
+  // Show sideNav
+  $('.button-collapse').sideNav('show');
+  // Hide sideNav
+  $('.button-collapse').sideNav('hide');
+  // Destroy sideNav
+  $('.button-collapse').sideNav('destroy');
         
 </script>        
 
