@@ -160,17 +160,36 @@
     {!! Form::close() !!}
 </div>
   </div>
+  <div class="row">
+<div class='col s4'>
 
-  
+  <div class="card-panel grey lighten-5 z-depth-1">
+          <div class="row valign-wrapper">
+            
+            <div class="col s10">
+              <span id="Id4" class="black-text">
+             
+              </span>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
 <script>
   
     //$("option").filter(function( index ) {$( this ).attr( "id" ) === $('.gamme').value;}).style.display = 'none';
-    var gamme = 1;
+    var gamme = 0;
     $('#gamme').change(function(e){
+
+
       $('option.gamme-'+gamme).hide();
       gamme = $(this).val();
-      $('option.gamme-'+gamme).show()
+      $('option.gamme-'+gamme).show();
+      $('span.black-text').show('option.gamme.value');
+
+
+
     });
-  
+
 </script>
 @endsection
