@@ -15,8 +15,8 @@ class gammeController extends Controller
 public function getlist()
 	{
 		 $gamme = DB::table('gamme')->get();
-
-        return view('gamme/list_gamme', ['gamme' => $gamme]);
+		 $caract_gamme = DB::table('caracteristiques_gamme')->get();
+        return view('gamme/list_gamme', ['gamme' => $gamme], ['caract_gamme' => $caract_gamme] );
 	}
 
 	public function getadd()
@@ -94,3 +94,4 @@ public function getlist()
 	}
 
 }
+?>

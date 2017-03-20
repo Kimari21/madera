@@ -13,7 +13,13 @@
       <ul class="collection with-header">
         <li class="collection-header"><h4>Liste gamme</h4></li>
          @foreach ($gamme as $unegamme)
-        <li class="collection-item"><div>{{$unegamme->Id_CaracteristiquesGamme}} &nbsp {{$unegamme->Nom_Gamme}} &nbsp  &nbsp  &nbsp  &nbsp  {{$unegamme->Prix_Gamme}}<div class='right hide-on-med-and-down'>
+        <li class="collection-item"><div>
+          @foreach ($caract_gamme as $unecaractgamme)
+          @if (($unegamme->Id_CaracteristiquesGamme) === ($unecaractgamme->Id_CaracteristiquesGamme))
+           {{$unecaractgamme->Nom_Caracteristiques_Gamme}}
+           @endif
+          @endforeach
+          &nbsp &nbsp  &nbsp {{$unegamme->Nom_Gamme}} &nbsp  &nbsp  &nbsp  &nbsp  {{$unegamme->Prix_Gamme}}<div class='right hide-on-med-and-down'>
 {!! Form::open(['url' => 'edit_gamme'], ['class' => 'form-horizontal well']) !!}
 
         {!! Form::hidden('modifier', $unegamme->Id_Gamme) !!}
