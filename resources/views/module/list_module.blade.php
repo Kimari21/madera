@@ -13,7 +13,7 @@
         <li class="collection-header"><h4>Liste module</h4></li>
            @foreach ($module as $unmodule)
              
-        <li class="collection-item"><div>{{$unmodule->Nom_Module}} &nbsp {{$unmodule->Nature_Module}} &nbsp  &nbsp{{$unmodule->Caracteristique_Module}}  
+        <li class="collection-item"><div>{{$unmodule->Nom_Module}} &nbsp &nbsp&nbsp  &nbsp  &nbsp{{$unmodule->Nature_Module}} &nbsp &nbsp  &nbsp &nbsp{{$unmodule->Caracteristique_Module}}  
           <div class='right hide-on-med-and-down'>
 {!! Form::open(['url' => 'edit_module'], ['class' => 'form-horizontal well']) !!}
 

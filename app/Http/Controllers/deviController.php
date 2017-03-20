@@ -16,8 +16,11 @@ class deviController extends Controller
     public function getlist()
 	{
 		 $devi = DB::table('devis')->get();
-		
-        return view('devi/list_devi', ['devi' => $devi]);
+		$utilisateurs = DB::table('utilisateurs')->get();
+		$client = DB::table('clients')->get();
+		$etat = DB::table('etat')->get();
+
+        return view('devi/list_devi', ['devi' => $devi, 'utilisateurs' => $utilisateurs, 'client' => $client, 'etat' => $etat]);
 	}
 
 	public function getadd()

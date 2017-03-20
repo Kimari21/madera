@@ -27,7 +27,7 @@
    <div class="input-field col s4">
     
 
-        {!! Form::text('Nom_Module') !!}
+        {!! Form::text('Nom_Module',array('required' => 'required')) !!}
 </div></div>
 
    
@@ -42,7 +42,7 @@
    <div class="input-field col s4">
       
 
-        {!! Form::text('Nature_Module') !!}
+        {!! Form::text('Nature_Module',array('required' => 'required')) !!}
         </div>
    </div>
    <div class="row">
@@ -55,7 +55,7 @@
    <div class="input-field col s4">
         
 
-        {!! Form::text('Caracteristique_Module') !!}
+        {!! Form::text('Caracteristique_Module',array('required' => 'required')) !!}
 </div></div>
 <div class="row">
    <div class="input-field col s4">
@@ -67,7 +67,7 @@
    <div class="input-field col s4">
         
 
-        {!! Form::text('Unite_Module') !!}
+        {!! Form::text('Unite_Module',array('required' => 'required')) !!}
         </div></div>
    
    <div class="row">
@@ -80,7 +80,7 @@
    <div class="input-field col s4">
        
 
-        {!! Form::number('Quantite_module') !!}
+        {!! Form::number('Quantite_module',array('required' => 'required')) !!}
 </div></div>
 
 <div class="row">
@@ -93,7 +93,7 @@
    <div class="input-field col s4">
         
 
-        {!! Form::text('Proprietaire_Module') !!}
+        {!! Form::text('Proprietaire_Module',array('required' => 'required')) !!}
         </div></div>
    
    <div class="row">
@@ -106,7 +106,7 @@
    <div class="input-field col s4">
       
 
-        {!! Form::number('Hauteur_Module') !!}
+        {!! Form::number('Hauteur_Module',array('required' => 'required')) !!}
 </div></div> 
 
 <div class="row">
@@ -119,7 +119,7 @@
    <div class="input-field col s4">
     
 
-        {!! Form::number('Longueur_Module') !!}
+        {!! Form::number('Longueur_Module',array('required' => 'required')) !!}
         </div></div>
    
 
@@ -133,7 +133,7 @@
    <div class="input-field col s4">
       
 
-        {!! Form::number('AngleEntrant_Module') !!}
+        {!! Form::number('AngleEntrant_Module',array('required' => 'required')) !!}
         </div></div>
      <div class="row">
    <div class="input-field col s4">
@@ -145,7 +145,7 @@
    <div class="input-field col s4">
      
 
-        {!! Form::number('AngleSortant_Module') !!}
+        {!! Form::number('AngleSortant_Module', array('required' => 'required')) !!}
 </div></div>
 
    <div class="row">
@@ -158,7 +158,7 @@
    <div class="row">
    <div class="input-field col s4">
       
-        {!! Form::number('Epaisseur_Module') !!}
+        {!! Form::number('Epaisseur_Module',array('required' => 'required')) !!}
 </div>
 </div>
 
@@ -171,7 +171,7 @@
 </div>
 <div class="row">
    <div class="input-field col s4">
-    		 <select name="Id_Gamme" id="Id_Gamme" class="browser-default" >
+    		 <select name="Id_Gamme" id="Id_Gamme" class="browser-default" required>
     	@foreach($gamme as $unegamme)
    
       	<option value="{{$unegamme->Id_Gamme}}">{{$unegamme->Id_Gamme}}</option>

@@ -16,7 +16,7 @@
  <div class="form-group">
     {!! Form::label('PrixTotal_Devis', 'Entrez le prix total : ') !!}
 
-        {!! Form::number('PrixTotal_Devis',$devi->PrixTotal_Devis) !!}
+        {!! Form::number('PrixTotal_Devis',$devi->PrixTotal_Devis,'',['required']) !!}
 </div>
 
    
@@ -24,7 +24,7 @@
    <div class="form-group">
         {!! Form::label('RemiseCommerciale_Devis', 'Entrez la remise commerciale : ') !!}
 
-        {!! Form::number('RemiseCommerciale_Devis', $devi->RemiseCommerciale_Devis) !!}
+        {!! Form::number('RemiseCommerciale_Devis', $devi->RemiseCommerciale_Devis,'',['required']) !!}
 </div>
 
 <div class="row">
@@ -36,7 +36,7 @@
 <div class="row">
    <div class="input-field col s4">
  
-         <select name="Id_Clients" id="Id_Clients" class="browser-default">
+         <select name="Id_Clients" id="Id_Clients" class="browser-default" required>
       @foreach($client as $unclient)
           @if($devi->Id_Clients==$unclient->Id_Clients)
         <option value="{{$unclient->Id_Clients}}" selected>{{$unclient->Nom_Clients}}</option>
@@ -58,7 +58,7 @@
    <div class="input-field col s4">
 
   
-         <select name="Id_Etat" id="Id_Etat" class="browser-default">
+         <select name="Id_Etat" id="Id_Etat" class="browser-default" required>
       @foreach($etat as $unetat)
           @if($devi->Id_Etat==$unetat->Id_Etat)
         <option value="{{$unetat->Id_Etat}}" selected>{{$unetat->Description_Etat}}</option>
@@ -80,7 +80,7 @@
    <div class="input-field col s4">
 
  
-         <select name="Id_Statut" id="Id_Statut" class="browser-default">
+         <select name="Id_Statut" id="Id_Statut" class="browser-default" required>
       @foreach($statut as $unstatut)
           @if($devi->Id_Statut==$unstatut->Id_Statut)
         <option value="{{$unstatut->Id_Statut}}" selected>{{$unstatut->Description_Statut}}</option>

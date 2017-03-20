@@ -38,7 +38,7 @@
   </div>
   <div class="row">
 <div class='col s4  offset-s4'>
- 		 <select name="gamme" id="gamme" class="browser-default gamme">
+ 		 <select name="gamme" id="gamme" class="browser-default gamme" required>
           <option></option>
     	@foreach($gamme as $unegamme)
         
@@ -62,7 +62,7 @@
   </div>
   <div class="row">
 <div class='col s4  offset-s4'>
-    		 <select name="module_1" id="module_1" class="browser-default module">
+    		 <select name="module_1" id="module_1" class="browser-default module" required>
           <option></option>
   	@foreach($module as $unmodule)
     @if($unmodule->Nature_Module == "Toit")
@@ -90,7 +90,7 @@
 
   <div class="row">
 <div class='col s4  offset-s4'>
-    		 <select name="module_2" id="module_2" class="browser-default module">
+    		 <select name="module_2" id="module_2" class="browser-default module" required>
     	<option></option>
       @foreach($module as $unmodule)
        @if($unmodule->Nature_Module == "Mur")
@@ -117,7 +117,7 @@
 
   <div class="row">
 <div class='col s4  offset-s4'>
-    		 <select name="module_3" id="module_3" class="browser-default module">
+    		 <select name="module_3" id="module_3" class="browser-default module" required>
           <option></option>
     	@foreach($module as $unmodule)
      @if($unmodule->Nature_Module == "Sol")
@@ -142,7 +142,7 @@
   </div>
   <div class="row">
 <div class='col s4  offset-s4'>
-    		 <select name="module_4" id="module_4" class="browser-default module">
+    		 <select name="module_4" id="module_4" class="browser-default module" required>
     	<option selected="selected"></option>
       @foreach($module as $unmodule)
      @if($unmodule->Nature_Module == "Terrasse")

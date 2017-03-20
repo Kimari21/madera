@@ -21,7 +21,7 @@
  <div class="input-field col s4">
     
 
-        {!! Form::text('nom_gamme',$gamme->Nom_Gamme) !!}
+        {!! Form::text('nom_gamme',$gamme->Nom_Gamme,'',['required']) !!}
   </div>
 </div>
 
@@ -35,7 +35,7 @@
  <div class="input-field col s4">
        
 
-        {!! Form::text('prop_gamme', $gamme->Proprietaire_Gamme) !!}
+        {!! Form::text('prop_gamme', $gamme->Proprietaire_Gamme,'',['required']) !!}
   </div>
 </div>
 <div class="row">
@@ -48,7 +48,7 @@
    <div class="input-field col s4">
    
 
-        {!! Form::number('prix_gamme', $gamme->Prix_Gamme) !!}
+        {!! Form::number('prix_gamme', $gamme->Prix_Gamme,'',['required']) !!}
       </div>
 </div>
 
@@ -63,7 +63,7 @@
 <div class="row">
    <div class="input-field col s4">
       
- <select name="caract_gamme" id="caract_gamme" class="browser-default">
+ <select name="caract_gamme" id="caract_gamme" class="browser-default" required>
       @foreach($caract_gamme as $uncaract_gamme)
           @if($gamme->Id_CaracteristiquesGamme==$uncaract_gamme->Id_CaracteristiquesGamme)
         <option value="{{$uncaract_gamme->Id_CaracteristiquesGamme}}" selected>{{$uncaract_gamme->Nom_Caracteristiques_Gamme}}</option>
